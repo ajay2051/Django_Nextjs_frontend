@@ -1,7 +1,7 @@
 // app/layout.tsx
 import { Poppins } from 'next/font/google'
-import Header from '../src/components/Header'
-import Footer from '../src/components/Footer'
+import Header from '../src/pages/Header'
+import Footer from '../src/pages/Footer'
 import './globals.css'
 
 const poppins = Poppins({

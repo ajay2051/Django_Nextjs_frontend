@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header className="w-full py-4 px-6 md:px-8 bg-white dark:bg-gray-900 shadow-sm">
       <div className="max-w-6xl mx-auto flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/my-app/public" className="flex items-center gap-2">
           <Image
             src="/next.svg"
             alt="Logo"
@@ -17,7 +17,7 @@ const Header = () => {
         </Link>
 
         <nav className="hidden md:flex gap-8">
-          <Link href="/" className="font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+          <Link href="/my-app/public" className="font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
             Home
           </Link>
           <Link href="/about" className="font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
