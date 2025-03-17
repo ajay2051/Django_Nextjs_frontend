@@ -11,7 +11,6 @@ import { AlertCircle, Loader2, Lock } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Checkbox } from "@/components/ui/checkbox"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Separator } from "@/components/ui/separator"
@@ -20,7 +19,6 @@ import { Separator } from "@/components/ui/separator"
 interface LoginCredentials {
     email: string
     password: string
-    rememberMe: boolean
 }
 
 interface LoginResponse {
@@ -38,7 +36,6 @@ export default function LoginPage() {
     const [credentials, setCredentials] = useState<LoginCredentials>({
         email: "",
         password: "",
-        rememberMe: false,
     })
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [error, setError] = useState<string | null>(null)
@@ -65,13 +62,6 @@ export default function LoginPage() {
         })
     }
 
-    const handleRememberMeChange = (checked: boolean) => {
-        setCredentials({
-            ...credentials,
-            rememberMe: checked,
-        })
-    }
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         setIsLoading(true)
@@ -80,7 +70,7 @@ export default function LoginPage() {
         try {
             // Make API call using axios
             const response = await axios.post<LoginResponse>(
-                "/api/auth/login", // Replace with your actual API endpoint
+                "http://127.0.0.1:8000/api/v1/auth/token/",
                 credentials,
                 {
                     headers: {
@@ -220,25 +210,6 @@ export default function LoginPage() {
                                         borderColor: isDarkMode ? "#333333" : "#e5e5e5",
                                     }}
                                 />
-                            </div>
-
-                            <div className="flex items-center space-x-2">
-                                <Checkbox
-                                    id="rememberMe"
-                                    checked={credentials.rememberMe}
-                                    onCheckedChange={handleRememberMeChange}
-                                    style={{
-                                        borderColor: isDarkMode ? "#333333" : "#e5e5e5",
-                                        background: credentials.rememberMe ? "#3b82f6" : isDarkMode ? "#1a1a1a" : "#ffffff",
-                                    }}
-                                />
-                                <label
-                                    htmlFor="rememberMe"
-                                    className="text-sm font-medium leading-none"
-                                    style={{ color: "var(--foreground)" }}
-                                >
-                                    Remember me
-                                </label>
                             </div>
                         </div>
 
