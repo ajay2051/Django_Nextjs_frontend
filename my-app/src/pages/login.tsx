@@ -85,8 +85,10 @@ export default function LoginPage() {
             // Store the token in localStorage or cookies
             localStorage.setItem("token", response.data.token)
 
-            // Redirect to dashboard or home page
-            router.push("/")
+            localStorage.setItem("userInfo", JSON.stringify(response.data.user))
+
+            // Redirect to portfolio page
+            router.push("/portfolio")
         } catch (err) {
             // Handle errors
             if (axios.isAxiosError(err)) {
