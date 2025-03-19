@@ -29,7 +29,7 @@ export default function PortfolioPage() {
             }
         } else {
             // Redirect to login if not logged in
-            router.push("/")
+            router.push("/login")
         }
     }, [router])
 
@@ -43,7 +43,7 @@ export default function PortfolioPage() {
         localStorage.removeItem("token")
         localStorage.removeItem("userInfo")
         setIsLoggedIn(false)
-        router.push("/")
+        router.push("/login")
     }
 
     return (
