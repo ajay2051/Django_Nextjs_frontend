@@ -29,7 +29,7 @@ export default function PortfolioPage() {
             }
         } else {
             // Redirect to login if not logged in
-            router.push("/login")
+            router.push("/auth/login")
         }
     }, [router])
 
@@ -91,7 +91,7 @@ export default function PortfolioPage() {
                             Salir
                         </button>
                     ) : (
-                        <Link href="/app/login/login" className="bg-[#38bdf8] hover:bg-[#0284c7] text-white px-4 py-2 rounded-md transition-colors">
+                        <Link href="/app/auth/login/login" className="bg-[#38bdf8] hover:bg-[#0284c7] text-white px-4 py-2 rounded-md transition-colors">
                             Contactar
                         </Link>
                     )}

@@ -72,7 +72,7 @@ export default function LoginPage() {
             localStorage.setItem("userInfo", JSON.stringify(response.data.user))
 
             // Redirect to portfolio page
-            router.push("/portfolio")
+            router.push("/main/portfolio")
         } catch (err) {
             // Handle errors
             if (axios.isAxiosError(err)) {
