@@ -104,7 +104,7 @@ export default function LoginPage() {
                     <CardTitle className="text-2xl font-bold tracking-tight">Sign in to your account</CardTitle>
                     <CardDescription>
                         Or{" "}
-                        <Link href="/register" className="font-medium text-primary hover:underline">
+                        <Link href="/auth/register" className="font-medium text-primary hover:underline">
                             create a new account
                         </Link>
                     </CardDescription>
