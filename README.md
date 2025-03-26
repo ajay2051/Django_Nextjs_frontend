@@ -1,3 +1,5 @@
+npm install --global yarn
+
 yarn create next-app ./
 
 yarn add tailwindcss@3.2.7 postcss autoprefixer

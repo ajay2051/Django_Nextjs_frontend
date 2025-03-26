@@ -94,7 +94,7 @@ export default function LoginPage() {
                     <div className="flex justify-center">
                         <Image
                             className="h-12 w-auto"
-                            src="/next.svg"
+                            src="/my_logo.jpg"
                             alt="Your Company Logo"
                             width={120}
                             height={40}
