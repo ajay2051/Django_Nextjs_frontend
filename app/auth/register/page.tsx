@@ -46,11 +46,11 @@ export default function RegisterPage() {
         setError(null)
 
         try {
-            await axios.post("http://127.0.0.1:8000/api/v1/auth/register/", formData, {
+            await axios.post("http://127.0.0.1:8000/api/v1/auth/create_users/", formData, {
                 headers: { "Content-Type": "application/json" },
             })
 
-            router.push("/login")
+            router.push("/auth/login")
         } catch (err) {
             if (axios.isAxiosError(err)) {
                 setError(err.response?.data?.message || "Registration failed.")
