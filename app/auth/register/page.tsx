@@ -5,8 +5,8 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import axios from "axios"
-import { useRouter } from "next/navigation"
-import { AlertCircle, Loader2, UserPlus } from "lucide-react"
+// import { useRouter } from "next/navigation"
+import { AlertCircle, Loader2, UserPlus, CheckCircle } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -23,7 +23,7 @@ interface RegisterData {
 }
 
 export default function RegisterPage() {
-    const router = useRouter()
+    // const router = useRouter()
     const [formData, setFormData] = useState<RegisterData>({
         first_name: "",
         last_name: "",
@@ -34,6 +34,7 @@ export default function RegisterPage() {
     })
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [error, setError] = useState<string | null>(null)
+    const [successMessage, setSuccessMessage] = useState<string | null>(null)
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target
@@ -46,11 +47,17 @@ export default function RegisterPage() {
         setError(null)
 
         try {
-            await axios.post("http://127.0.0.1:8000/api/v1/auth/create_users/", formData, {
+            const response = await axios.post("http://127.0.0.1:8000/api/v1/auth/create_users/", formData, {
                 headers: { "Content-Type": "application/json" },
             })
 
-            router.push("/auth/login")
+            // Set the success message from the API response
+            setSuccessMessage(response.data.message)
+
+            // Optional: Redirect after a delay or wait for user action
+            // setTimeout(() => {
+            //     router.push("/auth/login")
+            // }, 3000)
         } catch (err) {
             if (axios.isAxiosError(err)) {
                 setError(err.response?.data?.message || "Registration failed.")
@@ -79,6 +86,14 @@ export default function RegisterPage() {
                         <Alert variant="destructive" className="mb-6">
                             <AlertCircle className="h-4 w-4" />
                             <AlertDescription>{error}</AlertDescription>
+                        </Alert>
+                    )}
+                    {successMessage && (
+                        <Alert variant="default" className="mb-6 bg-green-50">
+                            <CheckCircle className="h-4 w-4 text-green-500" />
+                            <AlertDescription className="text-green-700">
+                                {successMessage}
+                            </AlertDescription>
                         </Alert>
                     )}
                     <form className="space-y-4" onSubmit={handleSubmit}>
