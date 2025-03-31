@@ -59,19 +59,19 @@ export default function PortfolioPage() {
 
                 <div className="hidden md:flex items-center space-x-6">
                     <Link href="#" className="text-[#38bdf8] hover:text-[#7dd3fc] transition-colors">
-                        Inicio
+                        Home
                     </Link>
                     <Link href="#" className="text-gray-300 hover:text-white transition-colors">
-                        Sobre mí
+                        About Me
                     </Link>
                     <Link href="#" className="text-gray-300 hover:text-white transition-colors">
-                        Proyectos
+                        Projects
                     </Link>
                     <Link href="#" className="text-gray-300 hover:text-white transition-colors">
-                        Educación
+                        Education
                     </Link>
                     <Link href="#" className="text-gray-300 hover:text-white transition-colors">
-                        Contacto
+                        Contact
                     </Link>
                 </div>
 
