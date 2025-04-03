@@ -55,7 +55,7 @@ export default function LoginPage() {
         try {
             // Make API call using axios
             const response = await axios.post<LoginResponse>(
-                `${process.env.PUBLIC_API_URL}/auth/token/`,
+                "http://127.0.0.1:8000/api/v1/auth/token/",
                 credentials,
                 {
                     headers: {
