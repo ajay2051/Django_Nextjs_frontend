@@ -48,7 +48,7 @@ export default function RegisterPage() {
 
         try {
             const response = await axios.post(
-                `${process.env.PUBLIC_API_URL}/auth/create_users/`,
+                `${process.env.NEXT_PUBLIC_API_URL}/auth/create_users/`,
                 formData, {
                 headers: { "Content-Type": "application/json" },
             })

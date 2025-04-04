@@ -21,13 +21,12 @@ interface LoginCredentials {
 }
 
 interface LoginResponse {
-    token: string
-    user: {
-        id: string
-        name: string
-        email: string
-        role: string
-    }
+    access_token: string
+    refresh_token: string
+    token_type: string
+    user_id: number
+    email: string
+    user_role: string
 }
 
 export default function LoginPage() {
@@ -55,7 +54,7 @@ export default function LoginPage() {
         try {
             // Make API call using axios
             const response = await axios.post<LoginResponse>(
-                "http://127.0.0.1:8000/api/v1/auth/token/",
+                `${process.env.NEXT_PUBLIC_API_URL}/auth/token/`,
                 credentials,
                 {
                     headers: {
@@ -63,13 +62,15 @@ export default function LoginPage() {
                     },
                 },
             )
-
-            // Handle successful login
-            console.log("Login successful:", response.data)
-
-            // Store the token in localStorage or cookies
-            localStorage.setItem("token", response.data.token)
-            localStorage.setItem("userInfo", JSON.stringify(response.data.user))
+            // Store tokens and user data from the response
+            localStorage.setItem("access_token", response.data.access_token)
+            localStorage.setItem("refresh_token", response.data.refresh_token)
+            localStorage.setItem("token_type", response.data.token_type)
+            localStorage.setItem("userInfo", JSON.stringify({
+                user_id: response.data.user_id,
+                email: response.data.email,
+                user_role: response.data.user_role
+            }))
 
             // Redirect to portfolio page
             router.push("/main/portfolio")
