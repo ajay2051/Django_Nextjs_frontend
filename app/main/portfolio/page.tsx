@@ -95,7 +95,7 @@ export default function PortfolioPage() {
                             Logout
                         </button>
                     ) : (
-                        <Link href="/app/auth/login/login" className="bg-[#38bdf8] hover:bg-[#0284c7] text-white px-4 py-2 rounded-md transition-colors">
+                        <Link href="/auth/login" className="bg-[#38bdf8] hover:bg-[#0284c7] text-white px-4 py-2 rounded-md transition-colors">
                             Contactar
                         </Link>
                     )}
@@ -441,13 +441,13 @@ export default function PortfolioPage() {
                             {/* Content */}
                             <div className="bg-[#1e293b]/50 border border-[#334155] rounded-lg p-6 flex-1">
                                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                                    <h3 className="text-xl font-bold">Full Stack Developer</h3>
+                                    <h3 className="text-xl font-bold">Software Engineer</h3>
                                     <div className="flex items-center mt-2 md:mt-0">
                                         <Calendar size={16} className="text-[#38bdf8] mr-2" />
                                         <span className="text-sm text-gray-400">2021 - 2023</span>
                                     </div>
                                 </div>
-                                <h4 className="text-[#38bdf8] mb-4">InnovateTech Inc.</h4>
+                                <h4 className="text-[#38bdf8] mb-4">NavyaAdvisors Pvt Ltd.</h4>
                                 <p className="text-gray-300 mb-4">
                                     Developed and maintained multiple web applications, implemented CI/CD pipelines, and collaborated with cross-functional teams to deliver high-quality software solutions.
                                 </p>
@@ -478,7 +478,7 @@ export default function PortfolioPage() {
                                         <span className="text-sm text-gray-400">2020 - 2021</span>
                                     </div>
                                 </div>
-                                <h4 className="text-[#38bdf8] mb-4">WebSolutions Co.</h4>
+                                <h4 className="text-[#38bdf8] mb-4">Thakur International Pvt Ltd.</h4>
                                 <p className="text-gray-300 mb-4">
                                     Built responsive websites, fixed bugs in existing systems, and assisted in the development of new features for client projects.
                                 </p>
@@ -509,7 +509,7 @@ export default function PortfolioPage() {
                         <div className="bg-[#1e293b]/50 border border-[#334155] rounded-lg overflow-hidden transition-transform hover:transform hover:-translate-y-2">
                             <div className="h-48 bg-gray-200 relative">
                                 <Image
-                                    src="/ecommerce.jpg"
+                                    src="/ecommerce.png"
                                     alt="E-commerce App"
                                     fill
                                     className="object-cover"

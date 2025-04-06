@@ -1,9 +1,9 @@
-import LoginPage from "@/app/auth/login/page";
+import PortfolioPage from "@/app/main/portfolio/page";
 
 export default function Home() {
   return (
     <div>
-      <LoginPage/>
+      <PortfolioPage/>
     </div>
   );
 }
