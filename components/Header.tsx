@@ -8,7 +8,7 @@ const Header = () => {
       <div className="max-w-6xl mx-auto flex justify-between items-center">
         <Link href="/my-app/public" className="flex items-center gap-2">
           <Image
-            src="/my_logo.jpg"
+            src="/my_logo.png"
             alt="Logo"
             width={80}
             height={20}

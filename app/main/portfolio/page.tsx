@@ -15,7 +15,7 @@ export default function PortfolioPage() {
 
     // Check if user is logged in and get user info
     useEffect(() => {
-        const token = localStorage.getItem("token")
+        const token = localStorage.getItem("access_token")
         if (token) {
             setIsLoggedIn(true)
             // Try to get user info from localStorage if available
@@ -41,10 +41,10 @@ export default function PortfolioPage() {
 
     // Handle logout
     const handleLogout = () => {
-        localStorage.removeItem("token")
+        localStorage.removeItem("access_token")
         localStorage.removeItem("userInfo")
         setIsLoggedIn(false)
-        router.push("/login")
+        router.push("/auth/login")
     }
 
     return (
