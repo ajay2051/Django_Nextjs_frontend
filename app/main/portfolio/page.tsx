@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import {ArrowRight, Github, Linkedin, Mail, Moon, Sun, LogOut, Code, Users, Globe, Calendar, Briefcase, GraduationCap, Send, Check, Loader2} from "lucide-react"
+import {ArrowRight, Github, Linkedin, Mail, Moon, Sun, LogOut, Code, Users, Globe, Calendar, Briefcase, GraduationCap, Send} from "lucide-react"
 import { useRouter } from "next/navigation"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useSelector, useDispatch } from 'react-redux'
@@ -22,19 +22,6 @@ export default function PortfolioPage() {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const router = useRouter()
     const dispatch = useDispatch()
-
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-    });
-
-    const [formStatus, setFormStatus] = useState({
-        submitting: false,
-        submitted: false,
-        error: null
-    });
 
     const isDarkMode = useSelector((state: RootState) => state.theme.isDarkMode)
 
@@ -820,98 +807,60 @@ export default function PortfolioPage() {
 
                         {/* Right Column - Contact Form */}
                         <div className={`${themeStyles.cardBg} border ${themeStyles.border} rounded-lg p-8 md:p-12`}>
-                            {formStatus.submitted ? (
-                                <div className="text-center py-8">
-                                    <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <Check size={32} className="text-white" />
-                                    </div>
-                                    <h3 className={`text-2xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-800'} mb-2`}>Message Sent!</h3>
-                                    <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                                        Thank you for reaching out. I'll get back to you as soon as possible.
-                                    </p>
-                                </div>
-                            ) : (
-                                <form className="space-y-6" onSubmit={handleSubmit}>
-                                    {formStatus.error && (
-                                        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                                            <strong className="font-bold">Error!</strong>
-                                            <span className="block sm:inline"> {formStatus.error}</span>
-                                        </div>
-                                    )}
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                        <div>
-                                            <label htmlFor="name" className={`block text-sm font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-2`}>Name</label>
-                                            <input
-                                                type="text"
-                                                id="name"
-                                                className={`w-full px-4 py-3 ${themeStyles.inputBg} border ${themeStyles.border} rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#38bdf8]`}
-                                                placeholder="Name"
-                                                required
-                                                value={formData.name}
-                                                onChange={(e) => setFormData({...formData, name: e.target.value})}
-                                            />
-                                        </div>
-                                        <div>
-                                            <label htmlFor="email" className={`block text-sm font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-2`}>Email</label>
-                                            <input
-                                                type="email"
-                                                id="email"
-                                                className={`w-full px-4 py-3 ${themeStyles.inputBg} border ${themeStyles.border} rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#38bdf8]`}
-                                                placeholder="ajay@email.com"
-                                                required
-                                                value={formData.email}
-                                                onChange={(e) => setFormData({...formData, email: e.target.value})}
-                                            />
-                                        </div>
-                                    </div>
-
+                            <form className="space-y-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div>
-                                        <label htmlFor="subject" className={`block text-sm font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-2`}>Subject</label>
+                                        <label htmlFor="name" className={`block text-sm font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-2`}>Name</label>
                                         <input
                                             type="text"
-                                            id="subject"
+                                            id="name"
                                             className={`w-full px-4 py-3 ${themeStyles.inputBg} border ${themeStyles.border} rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#38bdf8]`}
-                                            placeholder="Subject of the message"
+                                            placeholder="Name"
                                             required
-                                            value={formData.subject}
-                                            onChange={(e) => setFormData({...formData, subject: e.target.value})}
                                         />
                                     </div>
-
                                     <div>
-                                        <label htmlFor="message" className={`block text-sm font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-2`}>Message</label>
-                                        <textarea
-                                            id="message"
-                                            rows={6}
+                                        <label htmlFor="email" className={`block text-sm font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-2`}>Email</label>
+                                        <input
+                                            type="email"
+                                            id="email"
                                             className={`w-full px-4 py-3 ${themeStyles.inputBg} border ${themeStyles.border} rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#38bdf8]`}
-                                            placeholder="Your Message..."
+                                            placeholder="ajay@email.com"
                                             required
-                                            value={formData.message}
-                                            onChange={(e) => setFormData({...formData, message: e.target.value})}
-                                        ></textarea>
+                                        />
                                     </div>
+                                </div>
 
-                                    <button
-                                        type="submit"
-                                        className="w-full bg-gradient-to-r from-[#38bdf8] to-[#0ea5e9] text-white py-3 px-6 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center"
-                                        disabled={formStatus.submitting}
-                                    >
-                                        {formStatus.submitting ? (
-                                            <>
-                                    <span className="animate-spin mr-2">
-                                        <Loader2 size={16} />
-                                    </span>
-                                                Sending...
-                                            </>
-                                        ) : (
-                                            <>
-                                                Send Message
-                                                <Send size={16} className="ml-2" />
-                                            </>
-                                        )}
-                                    </button>
-                                </form>
-                            )}
+                                <div>
+                                    <label htmlFor="subject" className={`block text-sm font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-2`}>Subject</label>
+                                    <input
+                                        type="text"
+                                        id="subject"
+                                        className={`w-full px-4 py-3 ${themeStyles.inputBg} border ${themeStyles.border} rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#38bdf8]`}
+                                        placeholder="Subject of the message"
+                                        required
+                                    />
+                                </div>
+
+                                <div>
+                                    <label htmlFor="message" className={`block text-sm font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-2`}>Message</label>
+                                    <textarea
+                                        id="message"
+                                        rows={6}
+                                        className={`w-full px-4 py-3 ${themeStyles.inputBg} border ${themeStyles.border} rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#38bdf8]`}
+                                        placeholder="Your Message..."
+                                        required
+                                    ></textarea>
+                                </div>
+
+                                <button
+                                    type="submit"
+                                    className="w-full bg-gradient-to-r from-[#38bdf8] to-[#0ea5e9] text-white py-3 px-6 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center"
+                                >
+                                    Send Message
+                                    <Send size={16} className="ml-2" />
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
