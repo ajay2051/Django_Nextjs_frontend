@@ -454,12 +454,12 @@ export default function PortfolioPage() {
                                         <span className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>2023 - Present</span>
                                     </div>
                                 </div>
-                                <h4 className={`${themeStyles.accentText} mb-4`}>TechCorp Solutions</h4>
+                                <h4 className={`${themeStyles.accentText} mb-4`}>Techabound Pvt Ltd</h4>
                                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-4`}>
-                                    Leading development of enterprise web applications, mentoring junior developers, and architecting scalable solutions using React, Node.js, and cloud technologies.
+                                    Leading development of enterprise web applications, mentoring junior developers, and architecting scalable solutions using Django, Next.js, and cloud technologies.
                                 </p>
                                 <div className="flex flex-wrap gap-2">
-                                    <span className={`px-3 py-1 text-xs ${themeStyles.tagBg} border ${themeStyles.border} ${isDarkMode ? 'text-white' : 'text-gray-600'} rounded-full`}>React</span>
+                                    <span className={`px-3 py-1 text-xs ${themeStyles.tagBg} border ${themeStyles.border} ${isDarkMode ? 'text-white' : 'text-gray-600'} rounded-full`}>Next.js</span>
                                     <span className={`px-3 py-1 text-xs ${themeStyles.tagBg} border ${themeStyles.border} ${isDarkMode ? 'text-white' : 'text-gray-600'} rounded-full`}>Django</span>
                                     <span className={`px-3 py-1 text-xs ${themeStyles.tagBg} border ${themeStyles.border} ${isDarkMode ? 'text-white' : 'text-gray-600'} rounded-full`}>AWS</span>
                                     <span className={`px-3 py-1 text-xs ${themeStyles.tagBg} border ${themeStyles.border} ${isDarkMode ? 'text-white' : 'text-gray-600'} rounded-full`}>PostgreSQL</span>
