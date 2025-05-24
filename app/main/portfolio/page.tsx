@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState} from "react"
 import Image from "next/image"
 import Link from "next/link"
 import {ArrowRight, Github, Linkedin, Mail, Moon, Sun, LogOut, Code, Users, Globe, Calendar, Briefcase, GraduationCap, Send} from "lucide-react"
@@ -18,7 +18,7 @@ export interface RootState {
 }
 
 export default function PortfolioPage() {
-    const [userName, setUserName] = useState("Ajay Thakur")
+    const [userName] = useState("Ajay Thakur")
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const router = useRouter()
     const dispatch = useDispatch()
@@ -151,7 +151,7 @@ export default function PortfolioPage() {
                         </div>
 
                         <h1 className="text-5xl font-bold mb-4">
-                            Hi, I'm <span className={themeStyles.accentText}>{userName}</span>
+                            Hi, I&#39;m <span className={themeStyles.accentText}>{userName}</span>
                         </h1>
 
                         <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'} text-lg mb-8`}>
@@ -222,7 +222,7 @@ export default function PortfolioPage() {
                             <div>
                                 <h2 className={`text-2xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-600'}`}>My Journey</h2>
                                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-6`}>
-                                    I'm a Full Stack Engineer with a passion for building scalable web applications and exploring new technologies. My journey in software development began with a curiosity about how things work, which led me to pursue a career in engineering.
+                                    I&#39;m a Full Stack Engineer with a passion for building scalable web applications and exploring new technologies. My journey in software development began with a curiosity about how things work, which led me to pursue a career in engineering.
                                 </p>
                                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-8`}>
                                     Currently, I focus on developing full-stack applications with modern Python frameworks while continuing to expand my knowledge in AI/ML and embedded systems. I enjoy solving complex problems and collaborating with cross-functional teams.
@@ -784,7 +784,7 @@ export default function PortfolioPage() {
                         <div className="bg-gradient-to-br from-[#38bdf8] to-[#0ea5e9] p-8 md:p-12 rounded-lg">
                             <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
                             <p className="text-white mb-8">
-                                Fill out the form and I'll get back to you as soon as possible.
+                                Fill out the form and I&#39;ll get back to you as soon as possible.
                             </p>
                             <div className="space-y-6">
                                 <div className="flex items-center">
