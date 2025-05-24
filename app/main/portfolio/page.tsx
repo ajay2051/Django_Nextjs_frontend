@@ -29,25 +29,25 @@ export default function PortfolioPage() {
 
 
     // Check if user is logged in and get user info
-    useEffect(() => {
-        const token = localStorage.getItem("access_token")
-        if (token) {
-            setIsLoggedIn(true)
-            // Try to get user info from localStorage if available
-            const userInfo = localStorage.getItem("userInfo")
-            if (userInfo) {
-                try {
-                    const parsedUserInfo = JSON.parse(userInfo)
-                    setUserName(parsedUserInfo.name || "Ajay Thakur")
-                } catch (error) {
-                    console.error("Error parsing user info:", error)
-                }
-            }
-        } else {
-            // Redirect to login if not logged in
-            router.push("/auth/login")
-        }
-    }, [router])
+    // useEffect(() => {
+    //     const token = localStorage.getItem("access_token")
+    //     if (token) {
+    //         setIsLoggedIn(true)
+    //         // Try to get user info from localStorage if available
+    //         const userInfo = localStorage.getItem("userInfo")
+    //         if (userInfo) {
+    //             try {
+    //                 const parsedUserInfo = JSON.parse(userInfo)
+    //                 setUserName(parsedUserInfo.name || "Ajay Thakur")
+    //             } catch (error) {
+    //                 console.error("Error parsing user info:", error)
+    //             }
+    //         }
+    //     } else {
+    //         // Redirect to login if not logged in
+    //         router.push("/auth/login")
+    //     }
+    // }, [router])
 
     // Toggle dark/light mode
     const handleToggleTheme = () => {
@@ -551,16 +551,16 @@ export default function PortfolioPage() {
                         <div className={`${themeStyles.cardBg} border ${themeStyles.border} rounded-lg overflow-hidden transition-transform hover:transform hover:-translate-y-2`}>
                             <div className="h-48 bg-gray-200 relative">
                                 <Image
-                                    src="/ecommerce.png"
+                                    src="/vr.png"
                                     alt="E-commerce App"
                                     fill
                                     className="object-cover"
                                 />
                             </div>
                             <div className="p-6">
-                                <h3 className="text-xl font-bold mb-2">E-commerce App</h3>
+                                <h3 className="text-xl font-bold mb-2">Vehicle Rent</h3>
                                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-4`}>
-                                    An e-commerce application with a shopping cart and payment gateway.
+                                    A vehicle rent platform with a dashboard and payment gateway.
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     <span className={`px-3 py-1 text-xs ${themeStyles.tagBg} border ${themeStyles.border} ${isDarkMode ? 'text-white' : 'text-gray-600'} rounded-full`}>Next.js</span>
@@ -568,15 +568,26 @@ export default function PortfolioPage() {
                                     <span className={`px-3 py-1 text-xs ${themeStyles.tagBg} border ${themeStyles.border} ${isDarkMode ? 'text-white' : 'text-gray-600'} rounded-full`}>PostgreSQL</span>
                                 </div>
                                 <div className="flex justify-between">
-                                    <Link href="#" className={`${themeStyles.accentText} hover:text-[#7dd3fc] flex items-center`}>
+                                    <Link
+                                        href="https://demo-rental.techabound.com/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`${themeStyles.accentText} hover:text-[#7dd3fc] flex items-center`}
+                                    >
                                         <Globe size={16} className="mr-2" />
                                         Demo
                                     </Link>
-                                    <Link href="#" className={`${themeStyles.accentText} hover:text-[#7dd3fc] flex items-center`}>
+                                    <Link
+                                        href="https://github.com/ajay2051"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`${themeStyles.accentText} hover:text-[#7dd3fc] flex items-center`}
+                                    >
                                         <Github size={16} className="mr-2" />
                                         Code
                                     </Link>
                                 </div>
+
                             </div>
                         </div>
 
@@ -584,28 +595,28 @@ export default function PortfolioPage() {
                         <div className={`${themeStyles.cardBg} border ${themeStyles.border} rounded-lg overflow-hidden transition-transform hover:transform hover:-translate-y-2`}>
                             <div className="h-48 bg-gray-200 relative">
                                 <Image
-                                    src="/task_manager.png"
+                                    src="/f1.png"
                                     alt="Task Manager"
                                     fill
                                     className="object-cover"
                                 />
                             </div>
                             <div className="p-6">
-                                <h3 className="text-xl font-bold mb-2">Task Manager</h3>
+                                <h3 className="text-xl font-bold mb-2">F1 Apply</h3>
                                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-4`}>
-                                    Application for managing daily tasks with drag-and-drop functionality.
+                                    Easy Apply to different US Universities from single platform with payment gateway.
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     <span className={`px-3 py-1 text-xs ${themeStyles.tagBg} border ${themeStyles.border} ${isDarkMode ? 'text-white' : 'text-gray-600'} rounded-full`}>Next.js</span>
-                                    <span className={`px-3 py-1 text-xs ${themeStyles.tagBg} border ${themeStyles.border} ${isDarkMode ? 'text-white' : 'text-gray-600'} rounded-full`}>FastAPI</span>
+                                    <span className={`px-3 py-1 text-xs ${themeStyles.tagBg} border ${themeStyles.border} ${isDarkMode ? 'text-white' : 'text-gray-600'} rounded-full`}>Django</span>
                                     <span className={`px-3 py-1 text-xs ${themeStyles.tagBg} border ${themeStyles.border} ${isDarkMode ? 'text-white' : 'text-gray-600'} rounded-full`}>PostgreSQL</span>
                                 </div>
                                 <div className="flex justify-between">
-                                    <Link href="#" className={`${themeStyles.accentText} hover:text-[#7dd3fc] flex items-center`}>
+                                    <Link href="https://f1apply-frontend.vercel.app/" target="_blank" className={`${themeStyles.accentText} hover:text-[#7dd3fc] flex items-center`}>
                                         <Globe size={16} className="mr-2" />
                                         Demo
                                     </Link>
-                                    <Link href="#" className={`${themeStyles.accentText} hover:text-[#7dd3fc] flex items-center`}>
+                                    <Link href="https://github.com/ajay2051" target="_blank" className={`${themeStyles.accentText} hover:text-[#7dd3fc] flex items-center`}>
                                         <Github size={16} className="mr-2" />
                                         Code
                                     </Link>
@@ -634,11 +645,11 @@ export default function PortfolioPage() {
                                     <span className={`px-3 py-1 text-xs ${themeStyles.tagBg} border ${themeStyles.border} ${isDarkMode ? 'text-white' : 'text-gray-600'} rounded-full`}>Tailwind CSS</span>
                                 </div>
                                 <div className="flex justify-between">
-                                    <Link href="#" className={`${themeStyles.accentText} hover:text-[#7dd3fc] flex items-center`}>
+                                    <Link href="https://www.ventusky.com/" target="_blank" className={`${themeStyles.accentText} hover:text-[#7dd3fc] flex items-center`}>
                                         <Globe size={16} className="mr-2" />
                                         Demo
                                     </Link>
-                                    <Link href="#" className={`${themeStyles.accentText} hover:text-[#7dd3fc] flex items-center`}>
+                                    <Link href="https://github.com/ajay2051" target="_blank" className={`${themeStyles.accentText} hover:text-[#7dd3fc] flex items-center`}>
                                         <Github size={16} className="mr-2" />
                                         Code
                                     </Link>
