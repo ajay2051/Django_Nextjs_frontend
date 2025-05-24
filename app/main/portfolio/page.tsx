@@ -564,7 +564,7 @@ export default function PortfolioPage() {
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     <span className={`px-3 py-1 text-xs ${themeStyles.tagBg} border ${themeStyles.border} ${isDarkMode ? 'text-white' : 'text-gray-600'} rounded-full`}>Next.js</span>
-                                    <span className={`px-3 py-1 text-xs ${themeStyles.tagBg} border ${themeStyles.border} ${isDarkMode ? 'text-white' : 'text-gray-600'} rounded-full`}>Django</span>
+                                    <span className={`px-3 py-1 text-xs ${themeStyles.tagBg} border ${themeStyles.border} ${isDarkMode ? 'text-white' : 'text-gray-600'} rounded-full`}>FastAPI</span>
                                     <span className={`px-3 py-1 text-xs ${themeStyles.tagBg} border ${themeStyles.border} ${isDarkMode ? 'text-white' : 'text-gray-600'} rounded-full`}>PostgreSQL</span>
                                 </div>
                                 <div className="flex justify-between">
