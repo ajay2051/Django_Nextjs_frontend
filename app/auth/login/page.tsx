@@ -20,6 +20,7 @@ interface LoginCredentials {
     password: string
 }
 
+// Define TypeScript interfaces for login response
 interface LoginResponse {
     access_token: string
     refresh_token: string
