@@ -253,7 +253,7 @@ export default function PortfolioPage() {
                                 {/* Stats section */}
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className={`${themeStyles.cardBg} border ${themeStyles.border} rounded-lg p-6`}>
-                                        <h3 className={`text-3xl font-bold ${themeStyles.accentText}`}>4+</h3>
+                                        <h3 className={`text-3xl font-bold ${themeStyles.accentText}`}>5+</h3>
                                         <p className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}>Years of experience</p>
                                     </div>
                                     <div className={`${themeStyles.cardBg} border ${themeStyles.border} rounded-lg p-6`}>
